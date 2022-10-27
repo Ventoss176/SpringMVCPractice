@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>helloWorld</h1>
+<a th:href="@{/target}">target目标</a></br>
+<a th:href="@{/help}">target目标value = /help(默认get方法因控制器中已
+    设置为post方法理应失效)</a>
+<form th:action="@{/help}" method="post">
+    <input type="submit">
+</form>
+<a th:href="@{/help?username=vent&password=123&card=Ace}">成功参数传递普通形式</a>
+<a th:href="@{/help(username='vent', password=123, card='Ace')}">成功参数传递新方式</a>
+<a th:href="@{/help(username='vent', password=1234, card='ccc')}">失败参数传递新方式</a>
+<br><a th:href="@{/cnnnn1c}">target目标/cnnnn1c</a></br>
+<a th:href="@{/a1a}">target目标/a1a</a></br>
+<a th:href="@{/a1a/cnnn1c/ddd}">target目标/**/ddd</a></br>
+<br><a th:href="@{/cnnnn1c/1/admin}">target目标/cnnnn1c</a></br>
+<a th:href="@{/help1(username='vent', password=123, card='Ace')}">成功参数传递Servelet方式参数获取</a>
+<a th:href="@{/help2(username='vent', password=123, card='Ace')}">成功参数传递新方式参数获取</a><br>
+<a th:href="@{/help3(user_name='vent', password=123, card='Ace')}">成功参数传递新方式参数获取</a><br>
+<form th:action="@{/testpojo}" method="post">
+    用户名：<input type="text" name="username"><br>
+    密码：<input type="password" name="password"><br>
+    性别：<input type="radio" name="sex" value="男">男<input type="radio" name="sex" value="女">女<br>
+    年龄：<input type="text" name="age"><br>
+    邮箱：<input type="text" name="email"><br>
+    <input type="submit">
+</form>
+
+</body>
+</html>
